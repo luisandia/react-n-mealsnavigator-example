@@ -60,7 +60,10 @@ const App: () => React$Node = () => {
             </View>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
+              <Text style={{ fontFamily: "OpenSans" }}>
+                Read the docs to discover what to do next:
+              </Text>
+              <Text style={{ fontFamily: "Lato-Black" }}>
                 Read the docs to discover what to do next:
               </Text>
             </View>
@@ -91,12 +94,21 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: '600',
     color: Colors.black,
+    fontFamily: 'OpenSans-Bold',
   },
   sectionDescription: {
     marginTop: 8,
     fontSize: 18,
     fontWeight: '400',
     color: Colors.dark,
+  },
+  section2: {
+    fontSize: 24,
+    fontFamily: 'LatoBlack',
+  },
+  section1: {
+    fontSize: 24,
+    fontFamily: 'OpenSansRegular',
   },
   highlight: {
     fontWeight: '700',
