@@ -12,7 +12,11 @@ export default function MealsNavigator() {
     <Stack.Navigator initialRouteName={'Categories'}>
       <Stack.Screen name="Categories" component={CategoriesScreen} />
       <Stack.Screen name="CategoriesMeals" component={CategoryMealsScreen} />
-      <Stack.Screen name="MealDetail" component={MealDetailScreen} />
+      <Stack.Screen
+        name="MealDetail"
+        component={MealDetailScreen}
+        options={{title: '-- Meal Detail --'}}
+      />
       {/* <Stack.Screen name="Settings" component={Settings} /> */}
     </Stack.Navigator>
   );
