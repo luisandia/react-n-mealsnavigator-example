@@ -1,14 +1,20 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, Button} from 'react-native';
+import {useRoute, useNavigation} from '@react-navigation/native';
 
-const MealDetailScreen = ({route, navigation}) => {
-  const {itemId} = route.params;
-  const {otherParam} = route.params;
+const MealDetailScreen = () => {
+
+  const navigation = useNavigation();
+
   return (
     <View style={styles.screen}>
-      <Text>
-        The meal detail Screen {itemId} {otherParam}
-      </Text>
+      <Text>The meal detail Screen </Text>
+      <Button
+        title="Go back"
+        onPress={() => {
+          navigation.goBack();
+        }}
+      />
     </View>
   );
 };
