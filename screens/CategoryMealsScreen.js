@@ -1,31 +1,25 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+
+import {CATEGORIES, MEALS} from '../data/dummy-data';
+import MealList from '../components/MealList';
 import {useRoute, useNavigation} from '@react-navigation/native';
-import {CATEGORIES} from '../data/dummy-data';
 
-const CategoryMealsScreen = () => {
+const CategoryMealScreen = (props) => {
   const {
-    params: {id},
-  } = useRoute();
-  console.log(id);
-  const navigation = useNavigation();
+    route: {
+      params: {id},
+    },
+    navigation,
+  } = props;
 
-  const selectedCategory = CATEGORIES.find((cat) => cat.id === id);
-  navigation.setOptions({title: selectedCategory.title});
-  console.log(selectedCategory);
-  return (
-    <View style={styles.screen}>
-      <Text>The category meal Screen{selectedCategory.title}</Text>
-    </View>
+  const catId = id;
+  const selectedCategory = CATEGORIES.find((cat) => cat.id === catId);
+  navigation.setOptions({title: selectedCategory.name});
+  const displayedMeals = MEALS.filter(
+    (meal) => meal.categoryIds.indexOf(catId) >= 0,
   );
+
+  return <MealList listData={displayedMeals} navigation={props.navigation} />;
 };
 
-const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
-
-export default CategoryMealsScreen;
+export default CategoryMealScreen;
