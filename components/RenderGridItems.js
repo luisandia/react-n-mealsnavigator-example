@@ -1,10 +1,10 @@
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {StyleSheet, Text, View, Platform} from 'react-native';
+import {Platform, StyleSheet, Text, View} from 'react-native';
 import {
-  TouchableOpacity,
   TouchableNativeFeedback,
+  TouchableOpacity,
 } from 'react-native-gesture-handler';
-import {useNavigation, useRoute} from '@react-navigation/native';
 
 const RenderGridItems = ({item}) => {
   const navigation = useNavigation();

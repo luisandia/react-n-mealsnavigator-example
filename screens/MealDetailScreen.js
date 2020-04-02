@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
-import {ScrollView, View, Image, Text, Button, StyleSheet} from 'react-native';
+import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import {HeaderButtons, Item} from 'react-navigation-header-buttons';
-
-import {MEALS} from '../data/dummy-data';
 import CustomHeaderButton from '../components/CustomHeaderButton';
 import DefaultText from '../components/DefaultText';
+import {MEALS} from '../data/dummy-data';
 
 const ListItem = (props) => {
   return (

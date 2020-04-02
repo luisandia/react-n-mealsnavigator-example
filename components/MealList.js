@@ -1,6 +1,5 @@
 import React from 'react';
-import {View, FlatList, StyleSheet} from 'react-native';
-
+import {FlatList, StyleSheet, View} from 'react-native';
 import MealItem from './MealItem';
 
 const MealList = (props) => {
@@ -27,7 +26,7 @@ const MealList = (props) => {
         data={props.listData}
         keyExtractor={(item, index) => item.id}
         renderItem={renderMealItem}
-        style={{width: '100%'}}
+        style={styles.flatList}
       />
     </View>
   );
@@ -40,6 +39,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 15,
   },
+  flatList: {width: '100%'},
 });
 
 export default MealList;

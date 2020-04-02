@@ -1,10 +1,8 @@
 import React from 'react';
-
-import {CATEGORIES, MEALS} from '../data/dummy-data';
 import MealList from '../components/MealList';
-import {useRoute, useNavigation} from '@react-navigation/native';
+import {CATEGORIES, MEALS} from '../data/dummy-data';
 
-const CategoryMealScreen = (props) => {
+const CategoryMealsScreen = (props) => {
   const {
     route: {
       params: {id},
@@ -22,4 +20,4 @@ const CategoryMealScreen = (props) => {
   return <MealList listData={displayedMeals} navigation={props.navigation} />;
 };
 
-export default CategoryMealScreen;
+export default CategoryMealsScreen;
