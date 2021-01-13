@@ -1,12 +1,13 @@
-import {DrawerActions, useNavigation} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import { DrawerActions, useNavigation } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import {Platform} from 'react-native';
-import {HeaderButtons, Item} from 'react-navigation-header-buttons';
+import { Platform } from 'react-native';
+import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 import CustomHeaderButton from '../components/CustomHeaderButton';
 import Colors from '../constants/Colors';
 import CategoriesScreen from '../screens/CategoriesScreen';
 import CategoryMealsScreen from '../screens/CategoryMealsScreen';
+import MealDetailScreen from '../screens/MealDetailScreen';
 
 const Stack = createStackNavigator();
 
@@ -36,6 +37,11 @@ export default function MealsNavigator() {
       }}>
       <Stack.Screen name="Categories" component={CategoriesScreen} />
       <Stack.Screen name="CategoryMeals" component={CategoryMealsScreen} />
+      <Stack.Screen
+        name="MealDetail"
+        component={MealDetailScreen}
+        options={{ title: '-- Meal Detail --' }}
+      />
     </Stack.Navigator>
   );
 }

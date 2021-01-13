@@ -1,16 +1,14 @@
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {createStackNavigator} from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Colors from '../constants/Colors';
 import CategoriesScreen from '../screens/CategoriesScreen';
-import FavoritiesScreen from '../screens/FavoritesScreen';
-import MealDetailScreen from '../screens/MealDetailScreen';
+import FavoritiesStackNavigator from './FavoritiesStackNavigator';
 
 const Tab = createBottomTabNavigator();
-const Stack = createStackNavigator();
 
 const FavoritesNavigator = () => {
   return (
@@ -19,14 +17,14 @@ const FavoritesNavigator = () => {
       tabBarOptions={{
         activeTintColor: 'white',
         // inactiveTintColor:Colors.primaryColor,
-        style: {color: '#eee', backgroundColor: Colors.primaryColor},
+        style: { color: '#eee', backgroundColor: Colors.primaryColor },
       }}>
       <Tab.Screen
         name="Meals"
         component={CategoriesScreen}
         options={{
           // tabBarLabel: 'My Home',
-          tabBarIcon: ({color, focused, size}) => (
+          tabBarIcon: ({ color, focused, size }) => (
             <MaterialCommunityIcons
               name={'numeric-1-box-outline'}
               size={size}
@@ -34,19 +32,15 @@ const FavoritesNavigator = () => {
             />
           ),
         }}>
-        <Stack.Screen
-          name="MealDetail"
-          component={MealDetailScreen}
-          options={{title: '-- Meal Detail --'}}
-        />
       </Tab.Screen>
       <Tab.Screen
         name="Favorites"
-        component={FavoritiesScreen}
+        // component={FavoritiesScreen}
+        component={FavoritiesStackNavigator}
         options={{
           tabBarLabel: 'Favorites',
           tabBarIcon: (props) => {
-            const {focused, size, color} = props;
+            const { focused, size, color } = props;
             return (
               <FontAwesome
                 name="star"

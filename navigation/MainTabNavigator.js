@@ -6,6 +6,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Colors from '../constants/Colors';
 import FavoritesNavigator from './FavoritesNavigator';
 import MealsNavigator from './MealsNavigator';
+import FavoritiesScreen from '../screens/FavoritesScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -35,6 +36,7 @@ export default function MainTabNavigator() {
       <Tab.Screen
         name="Favorites"
         component={FavoritesNavigator}
+        // component={FavoritiesScreen}
         options={{
           tabBarLabel: 'Favorites',
           tabBarIcon: (props) => {
